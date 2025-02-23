@@ -5,8 +5,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 200px;
-    margin-top: 80px;
+    gap: 6.5rem;
+    margin-top: 6rem;
     margin-right: 10%;
     margin-left: 10%;  
 }
@@ -29,17 +29,21 @@
 }
 
 .content p {
-    margin-top: 20px;
-    font-size: 25px;
+    margin-top: 2rem;
+    font-size: 1.5rem;
     font-style: italic;
     font-weight: 200;
     line-height: 50px;
 }
 
 .highlight {
+    display: inline;
     background-color: #3B514B;
     border-radius: 20px;
-    padding: 5px 10px;
+    padding: 5px 8px;
+    margin-right: 10px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone; 
 }
 
 .image {

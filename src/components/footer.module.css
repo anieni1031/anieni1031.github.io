@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.contact img {
+    width: 60%;
+    height: auto;
+}
+
+.copyright {
+    font-weight: 200;
+    font-size: 15px;
+}
