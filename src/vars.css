@@ -1,0 +1,9 @@
+:root {
+    /* colors */
+    --color-text: #fff;
+    --color-primary: #c0ffee;
+    --color-bg: #181818;
+
+    /* fonts */
+    --font-inter: "Inter";
+}
