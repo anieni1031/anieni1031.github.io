@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import { Navbar } from "./components/navbar"
-import { About } from "./components/about"
-import { Experience } from "./components/experience"
-import { Footer } from "./components/footer"
-import { Projects } from "./components/projects"
+import { Navbar } from "./components/home/navbar"
+import { About } from "./components/home/about"
+import { Experience } from "./components/home/experience"
+import { Footer } from "./components/home/footer"
+import { Projects } from "./components/projects/projects"
 import styles from './App.module.css'
 import { Routes, Route, useLocation } from "react-router-dom";
 

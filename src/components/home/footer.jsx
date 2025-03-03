@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from "./footer.module.css"
-import email from "../assets/mailIcon.png"
-import git from "../assets/gitIcon.png"
-import linked from "../assets/inIcon.png"
+import email from "../../assets/mailIcon.png"
+import git from "../../assets/gitIcon.png"
+import linked from "../../assets/inIcon.png"
 
 export const Footer = () => {
     return <footer className={styles.footer}>
@@ -17,6 +17,6 @@ export const Footer = () => {
                 <img src={linked} alt="linkedin icon"/>
             </a>
         </div>
-        <p className={styles.copyright}>© Annie Wong, 2024</p>
+        <p className={styles.copyright}>© Annie Wong, 2025</p>
     </footer>
 }

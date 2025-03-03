@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, BrowserRouter, useLocation} from "react-router-dom"
-import resume from "../../public/resume.pdf"
+import resume from "../../../public/resume.pdf"
 
-import heart from "../assets/heart.png"
+import heart from "../../assets/heart.png"
 import styles from "./navbar.module.css"
 
 export const Navbar = () => {
@@ -32,7 +32,7 @@ export const Navbar = () => {
 
     return <nav className={`${styles.navbar} ${scrolled ? styles.scrolledMobile : ""}
             ${isProjectsPage ? styles.projectsNavbar : ""}`}>
-        <ul className={`${styles.menuItems} ${scrolled ? styles.scrolled : ""}`}>
+        <ul className={`${isProjectsPage ? styles.menuItemsp : styles.menuItems} ${styles.menuItems} ${scrolled && isHomePage ? styles.scrolled  : ""}`}>
             {isHomePage ? ( // navbar for home page
                 <>
                     <li>
@@ -45,13 +45,13 @@ export const Navbar = () => {
                 </>
             ) : ( // navbar for projects page
                 <>
-                    <li>
+                        <li className={`${scrolled ? styles.scrolledp : ""}`}>
                         <Link to="/">home</Link>
                     </li>
-                    <li>
+                        <li className={`${scrolled ? styles.scrolledp : ""}`}>
                         <a href={resume} target="_blank" rel="noopener noreferrer">resume</a>
                     </li>
-                    <img src={heart} alt="cute heart" className={styles.heart}/>
+                        <img src={heart} alt="cute heart" className={`${styles.heart} ${scrolled ? styles.scrolledh : ""}`}/>
                 </>
             )}
         </ul>

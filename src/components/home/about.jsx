@@ -1,5 +1,5 @@
 import React from 'react'
-import pfp from "../assets/pfp.jpg"
+import pfp from "../../assets/pfp.jpg"
 import styles from "./about.module.css"
 
 export const About = () => {

@@ -1,4 +1,4 @@
-@import "../vars.css";
+@import "../../vars.css";
 
 .navbar {
     display: flex;
@@ -10,6 +10,13 @@
     background-color: transparent;
     transition: background-color 0.2s ease-in-out;
     z-index: 200;
+}
+
+.projectsNavbar {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    padding: 30px 4%;
 }
 
 .scrolled {
@@ -28,6 +35,27 @@
     padding: 1%;
 }
 
+.menuItems:focus {
+    outline: none;
+}
+
+.menuItemsp {
+    display: flex;
+    list-style: none;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+    padding: 1%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.menuItemsp li:first-child {
+    margin-left: 30px;
+    margin-right: auto;
+    flex-shrink: 0;
+}
+
 .menuItems a {
     text-decoration: none;
     color: var(--color-text);
@@ -35,8 +63,8 @@
 
 .heart {
     padding-top: 2px;
-    width: 10%;
-    height: 10%;
+    width: 18px;
+    height: 18px;
 }
 
 @media screen and (max-width: 830px){ 

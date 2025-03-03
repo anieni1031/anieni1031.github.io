@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, BrowserRouter} from "react-router-dom"
+import { Link, BrowserRouter } from "react-router-dom"
 import styles from "./experience.module.css"
 
 export const Experience = () => {
@@ -23,7 +23,7 @@ export const Experience = () => {
                 </ul>
             </div>
             <div className={styles.item}>
-                <h1>in other times, I'm...</h1> 
+                <h1>in other times, I'm...</h1>
                 <ul>
                     <li>exploring local eats and café’s while discovering new bubble tea flavours</li>
                     <li>getting active, whether it be through the PAC gym, badminton matches with friends, or snowboarding down big mountains</li>
