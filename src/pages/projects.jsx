@@ -1,10 +1,12 @@
-import React from 'react';
-import { useEffect } from 'react';
-import ProjectCard from "./projectCard";
-import stock from "../../assets/stock.png";
-import involveu from "../../assets/involveu.png";
-import wordcross from "../../assets/wordcross.png";
-import website from "../../assets/website.png";
+import React from 'react'
+import { useEffect } from 'react'
+import ProjectCard from "../components/projects/projectCard"
+import { Navbar } from "../components/home/navbar"
+import { Footer } from "../components/home/footer"
+import stock from "../assets/stock.png"
+import involveu from "../assets/involveu.png"
+import wordcross from "../assets/wordcross.png"
+import website from "../assets/website.png"
 
 const projects = [
     {
@@ -43,29 +45,20 @@ const projects = [
 ]
 
 export const Projects = () => {
-    useEffect(() => {
-        window.scroll = new LocomotiveScroll({
-          el: document.querySelector("[data-scroll-container]"),
-          smooth: true,
-          multiplier: 1.2, // Controls smoothness speed
-          lerp: 0.1, // Controls "stretchiness"
-        });
-    
-        setTimeout(() => {
-          scroll.update();
-        }, 1000);
-    
-        return () => scroll.destroy();
-      }, [location.pathname]);
-    
-    return <section data-scroll-container className="flex flex-col max-w-full md:max-w-5xl mx-auto px-15">
-        <h1 data-scroll-section className="text-sm font-thin my-5 md:text-xl">some cool stuff i did</h1> 
-        <div>
-            {projects.map((project) => (
-                <section data-scroll-section>
-                    <ProjectCard key={project.title} {...project} />
-                </section>
-            ))}
+    return <section data-scroll-container>
+        <Navbar />
+        <div className="flex flex-col max-w-full md:max-w-5xl mx-auto px-15">
+            <h1 data-scroll-section className="text-sm font-thin my-5 md:text-xl">some cool stuff i did</h1>
+            <div>
+                {projects.map((project) => (
+                    <section data-scroll-section>
+                        <ProjectCard key={project.title} {...project} />
+                    </section>
+                ))}
+            </div>
         </div>
+        <section data-scroll-section>
+            <Footer />
+        </section>
     </section>;
 }

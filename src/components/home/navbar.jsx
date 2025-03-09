@@ -45,13 +45,13 @@ export const Navbar = () => {
                 </>
             ) : ( // navbar for projects page
                 <>
-                        <li className={`${scrolled ? styles.scrolledp : ""}`}>
+                    <li>
                         <Link to="/">home</Link>
                     </li>
-                        <li className={`${scrolled ? styles.scrolledp : ""}`}>
+                    <li>
                         <a href={resume} target="_blank" rel="noopener noreferrer">resume</a>
                     </li>
-                        <img src={heart} alt="cute heart" className={`${styles.heart} ${scrolled ? styles.scrolledh : ""}`}/>
+                        <img src={heart} alt="cute heart" className={styles.heart}/>
                 </>
             )}
         </ul>

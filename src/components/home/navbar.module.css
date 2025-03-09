@@ -12,13 +12,6 @@
     z-index: 200;
 }
 
-.projectsNavbar {
-    display: flex;
-    margin: 0 auto;
-    width: 100%;
-    padding: 30px 4%;
-}
-
 .scrolled {
     background-color: #3B514B;
     backdrop-filter: blur(10px);
@@ -35,8 +28,11 @@
     padding: 1%;
 }
 
-.menuItems:focus {
-    outline: none;
+.projectsNavbar {
+    display: flex;
+    margin: 0 auto;
+    width: 100vw;
+    padding: 30px 4%;
 }
 
 .menuItemsp {
