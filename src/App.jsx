@@ -9,10 +9,32 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 
 function App() {
   const location = useLocation();
+  const [isMobile, setIsMobile] = useState(false);
 
+  // for mobile
   useEffect(() => {
-    const scrollContainer = document.querySelector("[data-scroll-container]");
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Set to true for mobile devices
+    };
 
+    // Initial check
+    handleResize();
+
+    // Listen to resize events
+    window.addEventListener('resize', handleResize);
+
+    // Clean up listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
+  // for desktop
+  useEffect(() => {
+    if (isMobile) return;
+
+    const scrollContainer = document.querySelector("[data-scroll-container]");
     if (!scrollContainer) return;
 
     window.scroll = new LocomotiveScroll({

@@ -30,3 +30,40 @@ html, body {
   padding: 1rem 0.5rem; 
 }
 
+@media (max-width: 768px) {
+  html, body {
+    background-color: var(--color-bg);
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    overflow: auto !important;
+    /* Ensures normal scrolling on mobile */
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    /* Set scrollbar width */
+    height: 8px;
+    /* Horizontal scrollbar width */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #000000;
+    /* Scrollbar thumb color */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333;
+    /* Scrollbar thumb on hover */
+  }
+
+  [data-scroll-container] {
+    -webkit-overflow-scrolling: touch;
+    /* iOS momentum scrolling */
+    overflow-y: scroll;
+  }
+}

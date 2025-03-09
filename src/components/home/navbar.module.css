@@ -63,13 +63,18 @@
     height: 18px;
 }
 
-@media screen and (max-width: 830px){ 
-    .scrolled {
-        background-color: transparent;
+@media screen and (max-width: 768px){ 
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 999;
     }
-    
-    .scrolledMobile {
-        background-color: #3B514B;
-        backdrop-filter: blur(10px);
-    }
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background-color: var(--color-bg);
+    backdrop-filter: blur(10px);
 }
