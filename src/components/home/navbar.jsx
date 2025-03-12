@@ -68,7 +68,11 @@ export const Navbar = () => {
                     <li>
                         <a href={resume} target="_blank" rel="noopener noreferrer">resume</a>
                     </li>
-                    <img src={heart} alt="cute heart" className={styles.heart}/>
+                    <li>
+                        <Link to="/secret">
+                            <img src={heart} alt="cute heart" className={styles.heart} />
+                        </Link>
+                    </li>
                 </>
             ) : ( // navbar for projects page
                 <>
@@ -78,7 +82,11 @@ export const Navbar = () => {
                     <li>
                         <a href={resume} target="_blank" rel="noopener noreferrer">resume</a>
                     </li>
-                        <img src={heart} alt="cute heart" className={styles.heart}/>
+                    <li>
+                        <Link to="/secret">
+                            <img src={heart} alt="cute heart" className={styles.heart} />
+                        </Link>
+                    </li>
                 </>
             )}
         </ul>

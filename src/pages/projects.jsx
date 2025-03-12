@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react'
 import ProjectCard from "../components/projects/projectCard"
 import { Navbar } from "../components/home/navbar"
 import { Footer } from "../components/home/footer"

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Home } from "./pages/home"
 import { Projects } from "./pages/projects"
+import { Secret } from "./pages/secret"
 import styles from './App.module.css'
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -58,6 +59,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="secret" element={<Secret />} />
       </Routes>
     </div>
   )

@@ -28,6 +28,22 @@
     padding: 1%;
 }
 
+.menuItems li {
+    transition: transform .5s;
+}
+
+.menuItems li:hover {
+    transform: scale(1.1);
+}
+
+.menuItems img {
+    transition: transform .5s;
+}
+
+.menuItems img:hover {
+    transform: scale(1.1);
+}
+
 .projectsNavbar {
     display: flex;
     margin: 0 auto;
