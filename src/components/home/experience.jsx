@@ -9,14 +9,17 @@ export const Experience = () => {
                 <h1>currently, I'm...</h1>
                 <ul>
                     <li>interested in applying my skills to data analysis, engineering, and visualization</li>
+                    <li>a course assistant for CFM 101 (intro to financial markets and data analytics) at the University of Waterloo</li>
+                    <li>leading the organization of university-wide events as the vp of events for <a href="https://www.uwdatascience.ca/" target="_blank" rel="noopener noreferrer" className={styles.link}>UW Data Science Club</a></li>
                     <li>a front-end developer for <a href="https://www.watolink.ca/" target="_blank" rel="noopener noreferrer" className={styles.link}>WATOLINK</a>, a neurotechnology design team</li>
-                    <li>an organizer for CxC, a data science hackathon hosted by <a href="https://www.uwdatascience.ca/" target="_blank" rel="noopener noreferrer" className={styles.link}>UW Data Science Club</a></li>
-                    <li>seeking Summer 2025 internships!</li>
+                    <li>seeking Winter 2026 internships! feel free to reach out to me anytime.</li>
                 </ul>
             </div>
             <div className={styles.item}>
                 <h1>in the past, I...</h1>
                 <ul>
+                    <li>engineered fullstack solutions for a fintech automotive platform as a fullstack developer at <a href="https://sparklease.com/" target="_blank" rel="noopener noreferrer" className={styles.link}>Sparklease</a></li>
+                    <li>was an organizer for CxC, a data science hackathon hosted by <a href="https://www.uwdatascience.ca/" target="_blank" rel="noopener noreferrer" className={styles.link}>UW Data Science Club</a></li>
                     <li>promoted and organized hackathons, lessons, and workshops for <a href="https://mcpt.ca/" target="_blank" rel="noopener noreferrer" className={styles.link}>MCPT</a> as the vice president</li>
                     <li>designed my school’s mobile app as a part of <a href="https://maclyonsden.com/" target="_blank" rel="noopener noreferrer" className={styles.link}>Project Metropolis</a>, a student run organization behind the development of the school website</li>
                     <li>attended several hackathons and built winning <Link className={styles.link} to="/projects">projects</Link></li>
