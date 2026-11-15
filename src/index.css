@@ -1,69 +1,88 @@
 @import "tailwindcss";
 
+@theme static {
+  /* colors */
+  --color-milk: #F3F5EA;        /* page: matcha-latte foam */
+  --color-foam: #E3EACF;        /* tags, hovers */
+  --color-matcha: #56792B;      /* the name, accents */
+  --color-matcha-deep: #3A5420; /* links */
+  --color-ink: #26281E;         /* text */
+  --color-ink-soft: #5F6253;    /* secondary text */
+  --color-crust: #B8742C;       /* golden-brown, used sparingly */
+  --color-card: #FFFDF6;        /* paper: label cards */
+
+  /* fonts */
+  --font-display: "Bagel Fat One", "Figtree", system-ui, sans-serif;
+  --font-sans: "Figtree", system-ui, Helvetica, Arial, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, Menlo, monospace;
+}
+
+/* lights off: the same palette after dark */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-milk: #1A1E16;
+  --color-foam: #2D3525;
+  --color-matcha: #8FA672;
+  --color-matcha-deep: #A7BA8D;
+  --color-ink: #ECEFDF;
+  --color-ink-soft: #A4A993;
+  --color-crust: #C4955C;
+  --color-card: #262D1F;
+}
+
 @layer base {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", Arial, Helvetica, sans-serif;
+  html {
+    background-color: var(--color-milk);
+    transition: background-color 0.3s;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    color: var(--color-ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-foam);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-matcha);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 
-@theme {
-  --color-secondary: #3B514B;
-}
-
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
-
-[data-scroll-container] {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-[data-scroll-section] {
-  min-height: auto;
-  width: 100%;
-  padding: 1rem 0.5rem; 
-}
-
-@media (max-width: 768px) {
-  html, body {
-    background-color: var(--color-bg);
-    -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
-    overflow: auto !important;
-    /* Ensures normal scrolling on mobile */
+@layer components {
+  /* shared page column */
+  .page {
+    width: 100%;
+    max-width: 68rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 6vw, 3rem);
   }
 
-  ::-webkit-scrollbar {
-    width: 8px;
-    /* Set scrollbar width */
-    height: 8px;
-    /* Horizontal scrollbar width */
+  /* small mono label above a heading */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
   }
 
-  ::-webkit-scrollbar-track {
-    background: var(--color-bg);
+  .text-link {
+    color: var(--color-matcha-deep);
+    text-decoration: underline;
+    text-decoration-color: var(--color-matcha);
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    transition: background-color 0.2s;
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: #000000;
-    /* Scrollbar thumb color */
-    border-radius: 10px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #333;
-    /* Scrollbar thumb on hover */
-  }
-
-  [data-scroll-container] {
-    -webkit-overflow-scrolling: touch;
-    /* iOS momentum scrolling */
-    overflow-y: scroll;
+  .text-link:hover {
+    background-color: var(--color-foam);
   }
 }

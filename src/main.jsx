@@ -1,13 +1,17 @@
 import { StrictMode } from 'react'
-import ReactDOM from 'react-dom'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+
+import "@fontsource/bagel-fat-one/latin-400.css"
+import "@fontsource/figtree/400.css"
+import "@fontsource/figtree/500.css"
+import "@fontsource/figtree/600.css"
+import "@fontsource/dm-mono/400.css"
+
 import './index.css'
 import App from './App.jsx'
 
-import "@fontsource/inter"
-import { BrowserRouter } from 'react-router-dom'
-
-ReactDOM.createRoot(document.getElementById("root")).render(
+createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <StrictMode>
     <App />

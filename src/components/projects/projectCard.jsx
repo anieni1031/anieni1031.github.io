@@ -1,25 +1,49 @@
 import React from "react";
-import git from "../../assets/gitIcon.png"
+import styles from "./displayCase.module.css"
+
+// frosting running down the top of the cake
+const Frosting = () => (
+    <svg className={styles.frosting} viewBox="0 0 176 42" aria-hidden="true">
+        <path d="M1 18V12Q1 1 12 1H164Q175 1 175 12V18
+            a7 7 0 0 1-14 0 a6 6 0 0 0-12 0
+            v10 a7 7 0 0 1-14 0 v-10 a6 6 0 0 0-12 0
+            v3 a8 8 0 0 1-16 0 v-3 a6 6 0 0 0-12 0
+            v14 a7 7 0 0 1-14 0 v-14 a6 6 0 0 0-12 0
+            v5 a8 8 0 0 1-16 0 v-5 a6 6 0 0 0-12 0
+            v9 a7 7 0 0 1-14 0 v-9 a6 6 0 0 0-12 0
+            a7 7 0 0 1-14 0Z" />
+    </svg>
+)
 
 const ProjectCard = ({ link, title, image, tags, description }) => {
     return (
-        <div className="flex md:flex-row flex-col pb-10">
-            <img src={image} alt={title} className="w-full md:w-1/4" />
-            <div className="mt-5 md:mt-0 md:pl-5">
-                <a className="flex flex-row" href={link} target="_blank" rel="noopener noreferrer">
-                    <img className="w-4 h-4 mt-1.5 mr-2" src={git} alt="git icon"/>
-                    <h3 className="font-light text-m md:text-xl mb-3">{title}</h3>
-                </a>
-                <div className="flex flex-wrap font-light max-w-full text-sm md:text-base mb-2">
-                    {tags.map((tag) => (
-                        <span key={tag} className="mr-2 py-1 mb-3 px-3 bg-secondary rounded-3xl">
-                            {tag}
-                        </span>
-                    ))}
+        <article className={styles.item}>
+            <a className={styles.shelf} href={link} target="_blank" rel="noopener noreferrer" aria-label={`${title} on github`}>
+                <span className={styles.stand}>
+                    {/* the project picture is printed on the side of the cake */}
+                    <span className={styles.cake}>
+                        <img src={image} alt="" />
+                        <Frosting />
+                    </span>
+                    <span className={styles.plate} />
+                    <span className={styles.stem} />
+                    <span className={styles.base} />
+                </span>
+            </a>
+            <div className={styles.label}>
+                <div className={styles.card}>
+                    <h2 className={styles.cardName}>
+                        <a href={link} target="_blank" rel="noopener noreferrer">{title}</a>
+                    </h2>
+                    <p className={styles.cardText}>{description}</p>
+                    <p className={styles.ingredients}>
+                        <span className={styles.madeWith}>ingredients</span>
+                        {tags.join(" · ")}
+                    </p>
                 </div>
-                <p className="font-thin text-sm md:text-base">{description}</p>
+                <span className={styles.cardHolder} />
             </div>
-        </div>
+        </article>
     )
 };
 

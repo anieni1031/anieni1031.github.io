@@ -1,96 +1,118 @@
-@import "../../vars.css";
-
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: right;
-    padding-top: 30px;
-    padding-right: 4%;
-    padding-bottom: 10px;
-    background-color: transparent;
-    transition: background-color 0.2s ease-in-out;
-    z-index: 200;
-}
-
-.scrolled {
-    background-color: #3B514B;
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-}
-
-.menuItems {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    font-size: 15px;
-    font-weight: 300;
-    font-style: italic;
-    padding: 1%;
-}
-
-.menuItems li {
-    transition: transform .5s;
-}
-
-.menuItems li:hover {
-    transform: scale(1.1);
-}
-
-.menuItems img {
-    transition: transform .5s;
-}
-
-.menuItems img:hover {
-    transform: scale(1.1);
-}
-
-.projectsNavbar {
-    display: flex;
-    margin: 0 auto;
-    width: 100vw;
-    padding: 30px 4%;
-}
-
-.menuItemsp {
-    display: flex;
-    list-style: none;
-    font-size: 15px;
-    font-weight: 300;
-    font-style: italic;
-    padding: 1%;
-    width: 100%;
     justify-content: space-between;
+    padding-top: 1.75rem;
+    padding-bottom: 0.75rem;
 }
 
-.menuItemsp li:first-child {
-    margin-left: 30px;
-    margin-right: auto;
-    flex-shrink: 0;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
 }
 
-.menuItems a {
-    text-decoration: none;
-    color: var(--color-text);
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    list-style: none;
+    /* sits on the middle of the name's letters, which is a touch below the box's centre */
+    transform: translateY(2px);
 }
 
-.heart {
-    padding-top: 2px;
+.socials a {
+    display: block;
+    color: var(--color-matcha);
+    transition: color 0.2s, transform 0.3s;
+}
+
+.socials a:hover {
+    color: var(--color-matcha-deep);
+    transform: translateY(-2px);
+}
+
+.socials svg {
+    display: block;
     width: 18px;
     height: 18px;
 }
 
-@media screen and (max-width: 768px){ 
-    .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 999;
+/* no room on phones; the footer has the same links as text */
+@media screen and (max-width: 600px) {
+    .socials {
+        display: none;
     }
 }
 
-.sticky {
-    position: sticky;
-    top: 0;
-    z-index: 999;
-    background-color: var(--color-bg);
-    backdrop-filter: blur(10px);
+.wordmark {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    line-height: 1;
+    color: var(--color-matcha);
+}
+
+.wordmarkName {
+    white-space: nowrap;
+}
+
+/* on phones there's only room for the icon */
+@media screen and (max-width: 480px) {
+    .wordmarkName {
+        display: none;
+    }
+}
+
+.matcha {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.5s;
+}
+
+.wordmark:hover .matcha {
+    transform: rotate(-12deg);
+}
+
+.menuItems {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+}
+
+.menuItems a {
+    display: block;
+    color: var(--color-ink);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.menuItems a:hover {
+    color: var(--color-matcha);
+}
+
+.cookie {
+    width: 17px;
+    height: 17px;
+    transition: transform 0.5s;
+}
+
+.cookie:hover {
+    transform: rotate(-25deg) scale(1.1);
+}
+
+.lightswitch {
+    display: block;
+    color: var(--color-ink);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.lightswitch:hover {
+    color: var(--color-matcha);
 }

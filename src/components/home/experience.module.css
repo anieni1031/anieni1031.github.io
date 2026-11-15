@@ -1,54 +1,168 @@
-@import "../../vars.css";
-
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    margin-top: 4rem;
-    margin-right: 10%;
-    margin-left: 10%;  
+    padding-bottom: 6rem;
 }
 
-.content {
-    position: relative;
-    padding-left: 3rem; 
+/* the menu card: a border with a hairline just inside it */
+.menu {
+    /* a row of dots, spaced wider than a dotted border allows */
+    --dots: radial-gradient(circle, var(--color-matcha) 1px, transparent 1.3px) left center / 9px 2px repeat-x;
+    font-size: 1.0625rem;
     display: flex;
     flex-direction: column;
+    gap: 3.25rem;
+    padding: 2.5rem clamp(1.5rem, 6vw, 4rem) 2.25rem;
+    border: 1.5px solid var(--color-matcha);
+    border-radius: 1.25rem;
+    outline: 1px solid var(--color-matcha);
+    outline-offset: -8px;
+}
+
+.menuTitle {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    line-height: 1;
+    text-align: center;
+    color: var(--color-matcha);
+}
+
+.label {
+    font-size: 0.8125rem;
+    text-align: center;
+}
+
+/* course name, centred between two dotted rules */
+.group h2 {
+    display: flex;
+    align-items: center;
     gap: 1rem;
-    margin-bottom: 4rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
 }
 
-.content::before {
+.group h2::before,
+.group h2::after {
     content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2px; 
-    height: 100%; 
-    background-color: var(--color-primary); 
+    flex: 1;
+    height: 2px;
+    background: var(--dots);
+    opacity: 0.6;
 }
 
-.item h1{
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+.item + .item {
+    margin-top: 1.25rem;
 }
 
-.item ul{
-    font-size: 15px;
-    font-weight: 100;
-    line-height: 1.5rem;
-    padding-left: 2rem;
-    list-style-type: disc;
+.row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
 }
 
-.link {
-    color: var(--color-primary);
-    text-decoration: underline;   
+.role {
+    font-weight: 600;
 }
 
-.link {
-    color: var(--color-primary);
-    text-decoration: underline;   
+/* what kind of thing it was: co-op, ec, academic */
+.tag + .tag {
+    margin-left: -0.35rem;
+}
+
+.tag {
+    align-self: center;
+    flex-shrink: 0;
+    padding: 0.05rem 0.45rem;
+    border: 1px solid var(--color-matcha);
+    border-radius: 1rem;
+    background-color: color-mix(in srgb, var(--color-matcha) 10%, transparent);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-matcha-deep);
+}
+
+/* "new" stands out in gold, like on a specials board */
+.fresh {
+    border-color: var(--color-crust);
+    background-color: color-mix(in srgb, var(--color-crust) 10%, transparent);
+    color: var(--color-crust);
+}
+
+.leader {
+    flex: 1;
+    min-width: 1.5rem;
+    height: 2px;
+    background: var(--dots);
+    opacity: 0.6;
+    transform: translateY(-0.25em);
+}
+
+.place {
+    font-family: var(--font-mono);
+    font-size: 0.9375rem;
+    text-align: right;
+}
+
+/* under each item: what it was on the left, when on the right */
+.details {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.dates {
+    flex-shrink: 0;
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--color-ink-soft);
+}
+
+.description {
+    font-size: 1rem;
+    color: var(--color-ink-soft);
+}
+
+.note {
+    margin-top: 1.75rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.footnote {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    color: var(--color-ink-soft);
+}
+
+@media screen and (max-width: 560px) {
+    .menu {
+        gap: 2.75rem;
+        padding-top: 2rem;
+    }
+    .row {
+        flex-wrap: wrap;
+        gap: 0 0.6rem;
+    }
+    .leader {
+        display: none;
+    }
+    .details {
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+    .dates {
+        margin-left: 0;
+    }
+    .place {
+        flex-basis: 100%;
+        text-align: left;
+    }
 }

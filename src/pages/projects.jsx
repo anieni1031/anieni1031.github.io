@@ -6,6 +6,7 @@ import stock from "../assets/stock.png"
 import involveu from "../assets/involveu.png"
 import wordcross from "../assets/wordcross.png"
 import website from "../assets/website.png"
+import styles from "../components/projects/displayCase.module.css"
 
 const projects = [
     {
@@ -44,20 +45,19 @@ const projects = [
 ]
 
 export const Projects = () => {
-    return <section data-scroll-container>
+    return <>
         <Navbar />
-        <div className="flex flex-col max-w-full md:max-w-5xl mx-auto px-15">
-            <h1 data-scroll-section className="text-sm font-thin my-5 md:text-xl">some cool stuff i did</h1>
-            <div>
+        <main className="page pt-12 pb-24">
+            <p className="eyebrow">projects</p>
+            <h1 className="mt-1 text-2xl font-semibold tracking-tight">the display case</h1>
+            <p className="mt-1 mb-10 text-ink-soft">some cool stuff i did</p>
+            {/* a glass case: every project sits on a cake stand on a shelf, with its label card underneath */}
+            <div className={styles.case}>
                 {projects.map((project) => (
-                    <section data-scroll-section>
-                        <ProjectCard key={project.title} {...project} />
-                    </section>
+                    <ProjectCard key={project.title} {...project} />
                 ))}
             </div>
-        </div>
-        <section data-scroll-section>
-            <Footer />
-        </section>
-    </section>;
+        </main>
+        <Footer />
+    </>;
 }

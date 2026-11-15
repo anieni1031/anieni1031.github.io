@@ -1,14 +1,10 @@
-@import "../../vars.css";
-
 .container {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 6.5rem;
-    margin-top: 6rem;
-    margin-right: 10%;
-    margin-left: 10%;  
+    gap: 3rem;
+    padding-top: 4.5rem;
+    padding-bottom: 5rem;
 }
 
 .content {
@@ -17,69 +13,123 @@
     align-items: flex-start;
 }
 
-.content h1 {
-    font-size: 90px;
-    font-style: italic;
-    font-weight: 420;
-    letter-spacing: -3px;
-}
-
 .name {
-    color: var(--color-primary);
+    position: relative;
+    margin-top: 1.25rem;
+    font-family: var(--font-display);
+    font-size: clamp(4.75rem, 15vw, 10.5rem);
+    font-weight: 400;
+    line-height: 0.82;
+    /* room for the g's descender */
+    padding-bottom: 0.14em;
+    color: var(--color-matcha);
 }
 
-.content p {
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    font-style: italic;
-    font-weight: 200;
-    line-height: 50px;
+.word {
+    display: block;
 }
 
-.highlight {
-    display: inline;
-    background-color: #3B514B;
-    border-radius: 20px;
-    padding: 5px 8px;
-    margin-right: 6px;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone; 
+/* the latte is painted here, on top of the letters; see latte.js */
+.glass {
+    position: absolute;
+    /* matches PAD in latte.js */
+    inset: -32px;
+    width: calc(100% + 64px);
+    height: calc(100% + 64px);
+    pointer-events: none;
+}
+
+/* the canvas draws the letters now, the real ones only hold the space */
+.poured .letter {
+    color: transparent;
+}
+
+.letter {
+    display: inline-block;
+    transform-origin: 50% 100%;
+    animation: rise 0.7s cubic-bezier(0.3, 1.4, 0.5, 1) both;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(12%) scale(1.08, 0.7);
+    }
+    40% {
+        opacity: 1;
+    }
+}
+
+.intro {
+    margin-top: 2.25rem;
+    max-width: 35rem;
+    font-size: 1.3125rem;
+    line-height: 1.5;
+}
+
+.cta {
+    margin-top: 1rem;
+    color: var(--color-ink-soft);
+}
+
+.photo {
+    position: relative;
+    flex-shrink: 0;
+    width: min(34%, 21rem);
+    transition: transform 0.6s;
+}
+
+.photo:hover {
+    transform: rotate(6deg);
 }
 
 .image {
-    width: 30%;
-    height: 30%;
-    border-radius: 112px;
-    transition: transform .5s;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 50% 0%;
+    /* the bite: three overlapping tooth marks out of the top right */
+    --bite: transparent 98%, #000 100%;
+    -webkit-mask-image:
+        radial-gradient(13% 13% at 89% 12%, var(--bite)),
+        radial-gradient(7% 7% at 75% 3%, var(--bite)),
+        radial-gradient(7% 7% at 97% 26%, var(--bite));
+    -webkit-mask-composite: source-in;
+    mask-image:
+        radial-gradient(13% 13% at 89% 12%, var(--bite)),
+        radial-gradient(7% 7% at 75% 3%, var(--bite)),
+        radial-gradient(7% 7% at 97% 26%, var(--bite));
+    mask-composite: intersect;
 }
 
-.image:hover {
-    transform: scale(1.05);
+.crumb {
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: var(--color-crust);
 }
 
-@media screen and (max-width: 830px){
+@media screen and (max-width: 830px) {
     .container {
-        display: flex;
         flex-direction: column-reverse;
+        align-items: flex-start;
         gap: 2rem;
-        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3.5rem;
     }
-    .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+    .intro {
+        font-size: 1.125rem;
     }
-    .content h1 {
-        font-size: 60px;
+    .photo {
+        width: 11rem;
     }
-    .content p {
-        font-size: 1rem;
-        line-height: 2.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .letter {
+        animation: none;
     }
-    .image {
-        width: 50%;
-        height: 50%;
+    .photo {
+        transition: none;
     }
 }
